@@ -11,14 +11,13 @@ class Quiz extends Component {
     }
 
     render() {
-        const isQuizEnd = quizData.quiz_questions[this.state.quiz_position -1] === quizData.quiz_questions.length ? true : false;
+        const isQuizEnd = false;
 
-        return (
-            <div>
-                <QuizEnd />
-                <QuizQuestion quiz_question = { quizData.quiz_questions[this.state.quiz_position -1] }/>
-            </div>
-        )
+        if (isQuizEnd) {
+            return <QuizEnd />
+          
+        }
+        return <QuizQuestion quiz_question = { quizData.quiz_questions[this.state.quiz_position -1] }/>
     }
 }
 
